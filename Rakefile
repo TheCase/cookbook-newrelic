@@ -40,7 +40,7 @@ end
 desc 'Run all integration tests'
 task :integration => ['integration:vagrant']
 
-# Travic CI
+# Travis CI
 desc 'Run tests on Travis CI'
 task :travis => [:lint, :unit]
 
