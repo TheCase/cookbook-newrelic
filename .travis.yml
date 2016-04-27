@@ -16,6 +16,9 @@ before_script:
   - /opt/chefdk/embedded/bin/chef exec berks install
 
 script:
+  - /opt/chefdk/embedded/bin/chef --version
+  - /opt/chefdk/embedded/bin/rubocop --version
+  - /opt/chefdk/embedded/bin/foodcritic --version
   - /opt/chefdk/embedded/bin/chef exec rake travis
 
 branches:
