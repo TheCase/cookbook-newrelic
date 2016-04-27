@@ -7,16 +7,18 @@ addons:
     packages:
       - chefdk
 
+services: docker
+
 # https://docs.travis-ci.com/user/customizing-the-build/#Skipping-the-Installation-Step
 install: true
 
 before_script:
   - eval "$(/opt/chefdk/bin/chef shell-init bash)" # make ChefDK's Ruby the default
-  - /opt/chefdk/embedded/bin/chef gem install chef-sugar # install chef-sugar for ChefSpec
-  - /opt/chefdk/embedded/bin/chef exec berks install
+#  - chef gem install chef-sugar # install chef-sugar for ChefSpec
+  - chef exec berks install
 
 script:
-  - /opt/chefdk/embedded/bin/chef exec rake travis
+  - chef exec rake travis
 
 branches:
   only:
