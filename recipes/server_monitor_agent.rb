@@ -7,6 +7,7 @@
 
 newrelic_server_monitor 'Install' do
   license NewRelic.server_monitoring_license(node)
+  baseurl node['newrelic']['repository']['base']
   logfile node['newrelic']['server_monitoring']['logfile'] unless node['newrelic']['server_monitoring']['logfile'].nil?
   loglevel node['newrelic']['server_monitoring']['loglevel'] unless node['newrelic']['server_monitoring']['loglevel'].nil?
   proxy node['newrelic']['server_monitoring']['proxy'] unless node['newrelic']['server_monitoring']['proxy'].nil?

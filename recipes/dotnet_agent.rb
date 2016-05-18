@@ -7,4 +7,5 @@
 
 newrelic_agent_dotnet 'Install' do
   license NewRelic.application_monitoring_license(node)
+  https_download 'https://download.newrelic.com/dot_net_agent/release/x64'
 end

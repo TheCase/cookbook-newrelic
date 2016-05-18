@@ -1,5 +1,4 @@
 require 'spec_helper'
-set :path, '/opt/rbenv/shims:/opt/rbenv/bin:/opt/rbenv/plugins/ruby_build/bin:/usr/local/sbin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin:$PATH'
 
 describe file('/opt/newrelic/ruby') do
   it { should be_directory }

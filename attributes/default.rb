@@ -19,6 +19,9 @@ default['newrelic']['proxy'] = nil
 default['newrelic']['server_monitoring']['proxy'] = node['newrelic']['proxy']
 default['newrelic']['application_monitoring']['daemon']['proxy'] = node['newrelic']['proxy']
 
+# repo
+default['newrelic']['repository']['base'] = 'https://download.newrelic.com'
+
 #################
 # ADVANCED CONFIG
 #################
