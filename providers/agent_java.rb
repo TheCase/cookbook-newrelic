@@ -44,7 +44,7 @@ def agent_jar
     version = 'current'
 
     url_content = open("#{new_resource.baseurl}/newrelic/java-agent/newrelic-agent/current/") { |f| f.read.lines.grep(/jar/i).to_s }
-    jar_file = url_content.split(/\W+jar/).first.to_s.split('\\"').last + '.jar'
+    jar_file = url_content.split(/\W+jar/).first.to_s.split('/').last + '.jar'
   else
     version = new_resource.version
     jar_file = "newrelic-agent-#{version}.jar"
