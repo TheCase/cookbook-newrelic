@@ -43,14 +43,14 @@ def agent_jar
   if new_resource.version == 'latest'
     version = 'current'
 
-    url_content = open("#{new_resource.basedir}/newrelic/java-agent/newrelic-agent/current/") { |f| f.read.lines.grep(/jar/i).to_s }
+    url_content = open("#{new_resource.baseurl}/newrelic/java-agent/newrelic-agent/current/") { |f| f.read.lines.grep(/jar/i).to_s }
     jar_file = url_content.split(/\W+jar/).first.to_s.split('\\"').last + '.jar'
   else
     version = new_resource.version
     jar_file = "newrelic-agent-#{version}.jar"
   end
 
-  https_download = "#{new_resource.basedir}/newrelic/java-agent/newrelic-agent/#{version}/#{jar_file}"
+  https_download = "#{new_resource.baseurl}/newrelic/java-agent/newrelic-agent/#{version}/#{jar_file}"
 
   remote_file "#{new_resource.install_dir}/newrelic.jar" do
     source https_download
